@@ -1,0 +1,5 @@
+library(vegan)
+dis<-read.delim(file.choose(), header=T)
+dist<-as.matrix(dis)
+pcnm<-pcnm(dist)
+write.table(pcnm, file="~/Desktop/pcnmeuclidiano.txt")

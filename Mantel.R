@@ -1,0 +1,15 @@
+library(vegan)
+matesp<-read.delim(file.choose(), header=T)
+coor<-read.delim(file.choose(), header=T)
+Distancia<-dist(cbind(coor$Longitud, coor$Latitud))
+dist<-as.matrix(Distancia)
+esp<-matesp[,2:1503]
+row.names(esp)<-matesp[,1]
+sp<-vegdist(esp,method="chao")
+mantelpar<-mantel(sp, Distancia)
+DistanciaFloristica<-as.matrix(sp,upper=T,diag=T)
+DistanciaGeografica<-as.matrix(Distancia,upper=T,diag=T)
+plot(DistanciaGeografica,DistanciaFloristica)
+cor<-cor.test(DistanciaGeografica,DistanciaFloristica)
+reg<-lm(DistanciaGeografica~DistanciaFloristica)
+summary(reg)
