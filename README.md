@@ -1,5 +1,6 @@
-# Códigos-en-R
+# Códigos-R
 
-Esta es una compilación de códigos (scripts) desarrollados por varias personas y para diferentes objetivos. No necesariamente son infalibles o tienen en cuenta todos los elementos adecuados para un análisis estadístico, tómelos como una guía.
+Compilación de códigos (scripts) de múltiples fuentes y para diferentes objetivos. 
+No necesariamente infalibles, ni tienen en cuenta todos los elementos adecuados para análisis estadísticos.
 
-Úselos y modifíquelos a su conveniencia; si encuentra errores o ha realizado mejoras y quiere compartirlos o desea agregar más códigos, bienvenidos son.
+Bienvenidos comentarios o modificaciones.
