@@ -7,12 +7,12 @@ dist<-vegdist(xx,method="bray") # Matriz distancia Bray-Curtis
 
 #### NMDS
 nmds<-metaMDS(xx,distance="bray",trymax=1000,autotransform=FALSE)
-stressplot(mds)						# Visualizar stress
-nmds1<-plot(mds, type="t")			# Gráfica especial ordenaciones, type="p":puntos, "t":nombres variables
+stressplot(nmds)						# Visualizar stress
+nmds1<-plot(nmds, type="t")			# GrÃ¡fica especial ordenaciones, type="p":puntos, "t":nombres variables
 nmds2<-ordiplot(nmds$sites, type="t", cex=.8, cex.axis=1, cex.lab=1.5)
 nmds2<-ordiplot(mds1$species, type="t", cex=1.5)
 
-treat<-c(rep("S1",6),"S2","S2","S3",rep("S1",4),rep("S2",4),rep("S3",5)) # Vector con categorías 
+treat<-c(rep("S1",6),"S2","S2","S3",rep("S1",4),rep("S2",4),rep("S3",5)) # Vector con categorÃ­as 
 ordihull(nmds2, groups=treat, draw="polygon", col="grey")
 ordiellipse(nmds2, groups=treat, kind="ehull", conf=0.95 ,draw="polygon", col="grey")
 ordispider(nmds2, groups=treat,spiders="centroid",col="gray")
@@ -24,7 +24,7 @@ type="t" # grafica con nombres de las variables
 plot(nmds)
 points(nmds$sites,col="blue")
 points(nmds1$species[2,1],nmds1$species[2,2],pch=1)
-points(nmds1$species[7,1],nmds1$species[7,2],pch=2)# Agregar puntos a la gráfica selecionándolos 
+points(nmds1$species[7,1],nmds1$species[7,2],pch=2)# Agregar puntos a la grÃ¡fica selecionÃ¡ndolos 
 
 guac<-matrix(c(35,0 ,79,4),ncol=2,nrow=2,byrow=T, dimnames=list(Focal=c("AF","AM"),Neighbors=c("ma", "H"))) ## Ejemplo construccion matriz
 
